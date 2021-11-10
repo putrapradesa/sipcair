@@ -20,7 +20,10 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?php echo base_url(); ?>" class="nav-link">Home</a>
+        <a href="<?php echo base_url().'welcome'?>" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="<?php echo base_url(); ?>" class="nav-link">Website</a>
       </li>
     </ul>
 
@@ -102,19 +105,18 @@
         </div>
       </li> -->
       <!-- Notifications Dropdown Menu -->
-      <!-- <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
+          <i class="far fa-person"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <!-- <span class="dropdown-item dropdown-header">15 Notifications</span> -->
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
+            <!-- <i class="fas sign-out mr-2" href="<?php echo base_url().'auth/logout'?>"></i> Keluar -->
+            <a href="<?php echo base_url().'auth/logout'?>"><i class="fas sign-out mr-2"></i>Sign Out</a>
           </a>
-          <div class="dropdown-divider"></div>
+          <!-- <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
             <i class="fas fa-users mr-2"></i> 8 friend requests
             <span class="float-right text-muted text-sm">12 hours</span>
@@ -123,11 +125,11 @@
           <a href="#" class="dropdown-item">
             <i class="fas fa-file mr-2"></i> 3 new reports
             <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </a> -->
+          <!-- <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a> -->
         </div>
-      </li> -->
+      </li>
       <!-- <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
