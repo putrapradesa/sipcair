@@ -45,21 +45,34 @@ class sp2d extends CI_Controller {
         $odp = $data['odp'];
         $key = $data['key'];
 
-        $result = $this->m_upload->cari($category, $odp, $key);
+        if(($category != "" and $key == "") or ($category == "" and $key != "")) {
+            $datajson = array(
+            'status' => 500
+            );
 
-        $output = '';
-        $index=1;
-
-        foreach($result as $sp)
+            echo json_encode($datajson);
+        }else
         {
-            $output .= '<tr style="color:#fff;"><td width rowspan="5" style="background-color:#16a085;vertical-align:middle;text-align:center;">'.$index.'</td><td width colspan="5" style="background-color:#16a085;">'.$sp->Penerima.'</td></tr><tr style="font-style:italic;"><td width colspan="5"><span style = "float:left;width:5%;">Nama OPD</span><span style = "float:left;width:2%;">:</span><span style = "float:left;width:90%;">'.$sp->SubUnit.'</span></td></tr><tr style="font-style:italic;"><td width colspan="5"><span style = "float:left;width:5%;">Uraian</span><span style = "float:left;width:2%;">:</span><span style = "float:left;width:90%;">'.$sp->Keterangan.'</span></td></tr><tr><td class="center" rowspan="" style="font-weight:bold;background-color:#e6e6e6;">JENIS</td> <td width="" class="center" style="font-weight:bold;background-color:#e6e6e6;">NO SP2D</td><td width="" class="center" style="font-weight:bold;background-color:#e6e6e6;">TGL SP2D</td><td width="20%" class="center" style="font-weight:bold;background-color:#e6e6e6;">NAMA REKENING</td><td width="" class="center" style="font-weight:bold;background-color:#e6e6e6;">URAIAN</td></tr><tr>    <td class="center">'.$sp->Jenis.'</td><td width="" class="center"><span>'.$sp->NoSP2D.'</span></td><td width="" class="center"><span>'.$sp->Tanggal.'</span></td><td class="center"><span>'.$sp->Penerima.'</span></td><td width="" class="center"><span>'.$sp->Keterangan.'</span></td></tr>';
-            $index++;
+            $result = $this->m_upload->cari($category, $odp, $key);
+
+            $output = '';
+            $index=1;
+
+            foreach($result as $sp)
+            {
+                $output .= '<tr style="color:#fff;"><td width rowspan="5" style="background-color:#16a085;vertical-align:middle;text-align:center;">'.$index.'</td><td width colspan="5" style="background-color:#16a085;">'.$sp->Penerima.'</td></tr><tr style="font-style:italic;"><td width colspan="5"><span style = "float:left;width:5%;">Nama OPD</span><span style = "float:left;width:2%;">:</span><span style = "float:left;width:90%;">'.$sp->SubUnit.'</span></td></tr><tr style="font-style:italic;"><td width colspan="5"><span style = "float:left;width:5%;">Uraian</span><span style = "float:left;width:2%;">:</span><span style = "float:left;width:90%;">'.$sp->Keterangan.'</span></td></tr><tr><td class="center" rowspan="" style="font-weight:bold;background-color:#e6e6e6;">JENIS</td> <td width="" class="center" style="font-weight:bold;background-color:#e6e6e6;">NO SP2D</td><td width="" class="center" style="font-weight:bold;background-color:#e6e6e6;">TGL SP2D</td><td width="20%" class="center" style="font-weight:bold;background-color:#e6e6e6;">NAMA REKENING</td><td width="" class="center" style="font-weight:bold;background-color:#e6e6e6;">URAIAN</td></tr><tr>    <td class="center">'.$sp->Jenis.'</td><td width="" class="center"><span>'.$sp->NoSP2D.'</span></td><td width="" class="center"><span>'.$sp->Tanggal.'</span></td><td class="center"><span>'.$sp->Penerima.'</span></td><td width="" class="center"><span>'.$sp->Keterangan.'</span></td></tr>';
+                $index++;
+            }        
+
+            $table = '<table class="table table-striped table-bordered table-hover" id=""><tbody>'.$output.'</tbody></table>';
+
+            $datajson = array(
+            'data' => $table,
+            'status' => 200
+            );
+
+            echo json_encode($datajson);
         }
-
-        $table = '<table class="table table-striped table-bordered table-hover" id=""><tbody>'.$output.'</tbody></table>';
-
-
-        echo json_encode($table);
 
     }
 

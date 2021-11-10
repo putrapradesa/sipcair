@@ -19,7 +19,7 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?php echo base_url(); ?>" class="nav-link">Home</a>
+        <a href="<?php echo base_url().'welcome'?>" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="<?php echo base_url(); ?>" class="nav-link">Website</a>
@@ -28,17 +28,16 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+      <a href="<?php echo base_url().'auth/logout'?>"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-person"></i>
-        </a>
+        
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <!-- <span class="dropdown-item dropdown-header">15 Notifications</span> -->
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <!-- <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item"> -->
             <!-- <i class="fas sign-out mr-2" href="<?php echo base_url().'auth/logout'?>"></i> Keluar -->
-            <a href="<?php echo base_url().'auth/logout'?>"><i class="fas sign-out mr-2"></i>Sign Out</a>
-          </a>
+            <!-- <a href="<?php echo base_url().'auth/logout'?>"><i class="fas sign-out mr-2"></i>Sign Out</a> -->
+          <!-- </a> -->
           <!-- <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
             <i class="fas fa-users mr-2"></i> 8 friend requests

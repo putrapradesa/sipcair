@@ -57,6 +57,7 @@
                                 <div class="form-group">
                                     <label>Pilih ODP</label>
                                     <select class="select2" name="odp" id="odp" style="width: 100%;">
+                                    	<option value = ""></option>
                                         <option value = "BADAN KEPEGAWAIAN DAERAH">BADAN KEPEGAWAIAN DAERAH</option>
                                         <option value = "BADAN KESATUAN BANGSA DAN POLITIK">BADAN KESATUAN BANGSA DAN POLITIK</option>
                                         <option value = "BADAN PENANGGULANGAN BENCANA DAERAH">BADAN PENANGGULANGAN BENCANA DAERAH</option>
@@ -120,7 +121,8 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label>Pilih Kategori Pencarian</label>
-                                    <select class="select2" name="category" id="category" style="width: 100%;" required>
+                                    <select class="select2" name="category" id="category" style="width: 100%;">
+                                    	<option value = ""></option>
                                         <option value = "Penerima">Nama Rekening</option>
                                         <option value = "Keterangan">Uraian</option>
                                     </select>
@@ -186,7 +188,15 @@
             data: data
         })
         .done(function(data) {
-            $('#ajax_table').html(jQuery.parseJSON(data));
+        	var data = jQuery.parseJSON(data)
+        	if(data.status == 500)
+        	{
+        		alert("Jika Kategori Pencarian dipilih maka kata kunci dipilih begitu sebaliknya")
+        	}else
+        	{
+        		$('#ajax_table').html(data.data);
+        	}
+            
             // var out = jQuery.parseJSON(data);
 
             // tampilKategori();

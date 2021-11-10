@@ -16,13 +16,33 @@ class M_upload extends CI_Model {
 
     public function cari($category, $opd, $keyword)
     {
+    	// $query = '';
+    	// if($keyword == ""){
 
-    	// $this->db->like($category, $keyword, 'both');
-     //    $this->db->order_by('UploadedDate', 'ASC');
-     //    $this->db->limit(10);
-     //    return $this->db->get('sp2d')->result();
-        return $$this->db->query("SELECT * FROM sp2d WHERE Penerima LIKE '%".$category."%' AND SubUnit LIKE '%".$opd."%' AND Keterangan LIKE '%".$keyword."%' ORDER BY UploadedDate DESC")->result();
+    	// 	$query = $this->db->query("SELECT * FROM sp2d WHERE SubUnit LIKE '%".$opd."%' ORDER BY UploadedDate DESC");
+    	// }else {
+    	// 	$query = $this->db->query("SELECT * FROM sp2d WHERE SubUnit LIKE '%".$opd."%' AND ".$category." LIKE '%".$keyword."%' ORDER BY UploadedDate DESC");
+    	// }
 
+    	// // var_dump($query);
+    	// return $query->result();
+
+    	$query = "SELECT * FROM sp2d ";
+    	if($opd != ""){
+
+    		$query .= "WHERE SubUnit LIKE '%".$opd."%' ";
+    	}
+
+    	if($category != "" AND $keyword != "")
+    	{
+    		$query .= "AND ".$category." LIKE '%".$keyword."%' ";
+    	}
+
+
+    	$query .= "ORDER BY UploadedDate DESC";
+
+    	// var_dump($query);
+    	return $this->db->query($query)->result();
 
     }
 
