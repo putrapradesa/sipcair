@@ -14,13 +14,16 @@ class M_upload extends CI_Model {
         return $this->db->affected_rows();
     }
 
-    public function cari($category, $keyword)
+    public function cari($category, $opd, $keyword)
     {
 
-    	$this->db->like($category, $keyword, 'both');
-        $this->db->order_by('UploadedDate', 'ASC');
-        $this->db->limit(10);
-        return $this->db->get('sp2d')->result();
+    	// $this->db->like($category, $keyword, 'both');
+     //    $this->db->order_by('UploadedDate', 'ASC');
+     //    $this->db->limit(10);
+     //    return $this->db->get('sp2d')->result();
+        return $$this->db->query("SELECT * FROM sp2d WHERE Penerima LIKE '%".$category."%' AND SubUnit LIKE '%".$opd."%' AND Keterangan LIKE '%".$keyword."%' ORDER BY UploadedDate DESC")->result();
+
+
     }
 
     function getdata()

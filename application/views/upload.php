@@ -74,7 +74,9 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
+  <div id="load" style="width: 100%; height: 100%; position: fixed; text-indent: 100%; background: #e0e0e0 url('<?php echo base_url().'assets/img/loading.gif'?>') no-repeat center; z-index: 1; opacity: 0.4; background-size: 8%;">Loading...</div>
   <div class="content-wrapper">
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -164,6 +166,7 @@ $(function () {
 });
 
 $(document).ready(function(){ 
+  $("#load").fadeOut();
   $('#form-upload-excel').on('submit', function(event){
     // data = new FormData(this);
     // console.log(data);

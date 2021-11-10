@@ -45,7 +45,7 @@ class sp2d extends CI_Controller {
         $odp = $data['odp'];
         $key = $data['key'];
 
-        $result = $this->m_upload->getdata();
+        $result = $this->m_upload->cari($category, $odp, $key);
 
         $output = '';
         $index=1;
