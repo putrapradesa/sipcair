@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SIP CAIR</title>
+  <title>SIP CAIR | Sistem Informasi Pencairan Sp2d</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -84,11 +84,30 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li <?php if ($menu == 'upload' ) { 
+                            echo 'class="nav-item active"'; 
+                        }else{
+                            echo 'class="nav-item"';
+                        }?>>
+            <a href="<?php echo base_url().'upload'?>" class="nav-link">
               <i class="nav-icon fas fa-upload"></i>
               <p>
                 Upload Data
+              </p>
+            </a>
+            
+          </li>
+          <li <?php if ($menu == 'tambah' && $ses_level == 'admin') { 
+                            echo 'class="nav-item active"'; 
+                        }else if ($ses_level == 'admin'){
+                            echo 'class="nav-item"';
+                        }else{
+                          echo 'class="nav-item" style = "display:none"';
+                        }?>>
+            <a href="<?php echo base_url().'auth/tambah_pengguna'?>" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Tambah Pengguna
               </p>
             </a>
           </li>
@@ -215,6 +234,7 @@ $(document).ready(function(){
       success:function(data){
         if(data > 0){
           alert("Data Berhasil diupload");
+          document.getElementById("form-upload-excel").reset();
         }else{
           alert("Data Gagal diupload");
         }

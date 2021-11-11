@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2021 at 01:09 PM
+-- Generation Time: Nov 11, 2021 at 03:05 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -65,16 +65,6 @@ CREATE TABLE `sp2d` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `sp2d`
---
-
-INSERT INTO `sp2d` (`Id`, `Tanggal`, `UploadedBy`, `NoSP2D`, `Jenis`, `SubUnit`, `Penerima`, `Keterangan`, `Bruto`, `Potongan`, `Netto`, `DeletedBy`, `UploadedDate`) VALUES
-(1, '1/4/2021', 'dev', '0001/SP2D-GJ/DISPKH-PB/I/2021', 'LS', 'DINAS PETERNAKAN DAN KESEHATAN HEWAN', 'DINAS PETERNAKAN DAN KESEHATAN HEWAN PROV PB', 'Pembayaran Gaji Bulan Januari 2021 pada Dinas Peternakan dan kesehatan hewan', '283,654,258.00 ', '46,557,258.00 ', '237,097,000.00 ', '', '2021-11-07'),
-(2, '1/4/2021', 'dev', '0002/SP2D-GJ/BPBD-PB/I/2021', 'LS', 'BADAN PENGANGGULANGAN BENCANA DAERAH', 'BADAN PENANGGULANGAN BENCANA DAERAH PROVINSI PAPUA BARAT', 'Pembayaran Gaji ASN BPBD PB Bulan Januari 2021', '148,814,570.00 ', '22,444,770.00 ', '126,369,800.00 ', '', '2021-11-07'),
-(3, '1/6/2021', 'dev', '0039/SP2D-GJ/SATPOL PP-PB/I/2021', 'LS', 'SATUAN POLISI PAMONGPRAJA', 'SATUAN POLISI PAMONG PRAJA DAERAH PROV PAPUA BARAT PEMERINTAH', 'Pembayaran Gaji ASN Bulan Januari 2021 Pada Kantor SATPOL PP Provinsi Papua Barat, Sesuai Daftar Gaji Terlampir.', '239,141,443.00 ', '40,484,643.00 ', '198,656,800.00 ', '', '2021-11-07'),
-(4, '1/6/2021', 'dev', '0041/SP2D-GJ/DISARPUS-PB/I/2021', 'LS', 'DINAS KEARSIPAN DAN PERPUSTAKAAN', 'DINAS KEARSIPAN DAN PERPUSTAKAAN PROV PAPUA BARAT PEMERINTAH', 'Pembayaran Gaji Induk PNS/CPNS Bulan Januari Tahun 2021 pada Dinas Kearsipan dan Perpustakaan Provinsi Papua Barat', '164,109,248.00 ', '25,998,748.00 ', '138,110,500.00 ', '', '2021-11-07');
-
---
 -- Indexes for dumped tables
 --
 
@@ -98,13 +88,13 @@ ALTER TABLE `sp2d`
 -- AUTO_INCREMENT for table `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sp2d`
 --
 ALTER TABLE `sp2d`
-  MODIFY `Id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(100) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

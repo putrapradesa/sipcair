@@ -20,7 +20,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message2');
+		$data['menu'] = '';
+		$data['ses_level'] = $this->session->userdata('level');
+		$this->load->view('welcome_message2', $data);
 	}
 
 	public function upload()

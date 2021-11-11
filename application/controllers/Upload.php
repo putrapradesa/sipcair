@@ -39,7 +39,9 @@ class Upload extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('upload');
+        $data['menu'] = 'upload';
+        $data['ses_level'] = $this->session->userdata('level');
+		$this->load->view('upload' ,$data);
 	}
 
 	public function upload()
