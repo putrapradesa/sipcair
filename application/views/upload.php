@@ -119,7 +119,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div id="load" style="width: 100%; height: 100%; position: fixed; text-indent: 100%; background: #e0e0e0 url('<?php echo base_url().'assets/img/loading.gif'?>') no-repeat center; z-index: 1; opacity: 0.4; background-size: 8%;">Loading...</div>
+  <div id="load" style="width: 100%; height: 100%; position: fixed; text-indent: 100%; background: #e0e0e0 url('<?php echo base_url().'assets/images/loading.gif'?>') no-repeat center; z-index: 1; opacity: 0.4; background-size: 8%;">Loading...</div>
   <div class="content-wrapper">
 
     <!-- Content Header (Page header) -->
@@ -213,6 +213,8 @@ $(function () {
 $(document).ready(function(){ 
   $("#load").fadeOut();
   $('#form-upload-excel').on('submit', function(event){
+
+    $("#load").show();
     // data = new FormData(this);
     // console.log(data);
     event.preventDefault();
@@ -232,6 +234,7 @@ $(document).ready(function(){
       processData:false,
 
       success:function(data){
+        $("#load").hide();
         if(data > 0){
           alert("Data Berhasil diupload");
           document.getElementById("form-upload-excel").reset();

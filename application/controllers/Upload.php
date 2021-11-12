@@ -46,6 +46,7 @@ class Upload extends CI_Controller {
 
 	public function upload()
 	{
+        ini_set("memory_limit", -1);
         $input = array();
 		$file_mimes = array('application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 
