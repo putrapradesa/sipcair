@@ -55,7 +55,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label>Pilih ODP</label>
+                                    <label>Pilih OPD</label>
                                     <select class="select2" name="odp" id="odp" style="width: 100%;">
                                     	<option value = ""></option>
                                         <option value = "BADAN KEPEGAWAIAN DAERAH">BADAN KEPEGAWAIAN DAERAH</option>
