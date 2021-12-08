@@ -56,7 +56,7 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label>Pilih OPD</label>
-                                    <select class="select2" name="odp" id="odp" style="width: 100%;">
+                                    <select class="select2" name="odp" id="odp" style="width: 100%;" required>
                                     	<option value = ""></option>
                                         <option value = "BADAN KEPEGAWAIAN DAERAH">BADAN KEPEGAWAIAN DAERAH</option>
                                         <option value = "BADAN KESATUAN BANGSA DAN POLITIK">BADAN KESATUAN BANGSA DAN POLITIK</option>
@@ -121,10 +121,11 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label>Pilih Kategori Pencarian</label>
-                                    <select class="select2" name="category" id="category" style="width: 100%;">
+                                    <select class="select2" name="category" id="category" style="width: 100%;" required>
                                     	<option value = ""></option>
                                         <option value = "Penerima">Nama Rekening</option>
                                         <option value = "Keterangan">Uraian</option>
+                                        <option value = "Tanggal">Tahun</option>
                                     </select>
                                 </div>
                             </div>
@@ -140,7 +141,7 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group input-group-lg">
-                                <input type="search" name="key" class="form-control form-control-lg" placeholder="Kata Kunci">
+                                <input type="search" name="key" class="form-control form-control-lg" placeholder="Kata Kunci" required=>
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-lg btn-default">
                                         <i class="fa fa-search"></i>
