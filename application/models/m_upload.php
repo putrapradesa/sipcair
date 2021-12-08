@@ -14,7 +14,7 @@ class M_upload extends CI_Model {
         return $this->db->affected_rows();
     }
 
-    public function cari($category, $opd, $keyword)
+    public function cari($category, $opd, $keyword, $tahun)
     {
     	// $query = '';
     	// if($keyword == ""){
@@ -30,12 +30,12 @@ class M_upload extends CI_Model {
     	$query = "SELECT * FROM sp2d ";
     	if($opd != ""){
 
-    		$query .= "WHERE SubUnit LIKE '%".$opd."%' ";
+    		$query .= "WHERE SubUnit LIKE '%".$opd."%' AND Tanggal LIKE '%".$tahun."%' ";
     	}
 
     	if($category != "" AND $keyword != "")
     	{
-    		$query .= "AND ".$category." LIKE '%".$keyword."%' ";
+    		$query .= "AND ".$category." LIKE '%".$keyword."%' AND Tanggal LIKE '%".$tahun."%' ";
     	}
 
 

@@ -125,7 +125,6 @@
                                     	<option value = ""></option>
                                         <option value = "Penerima">Nama Rekening</option>
                                         <option value = "Keterangan">Uraian</option>
-                                        <option value = "Tanggal">Tahun</option>
                                     </select>
                                 </div>
                             </div>
@@ -139,16 +138,35 @@
                                 </div>
                             </div> -->
                         </div>
-                        <div class="form-group">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <input type="text" name="tahun" class="form-control form-control-lg" placeholder="Tahun" required>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="form-group">
+                                    <div class="input-group input-group-lg">
+                                        <input type="search" name="key" class="form-control form-control-lg" placeholder="Kata Kunci" required>
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-lg btn-default">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
                             <div class="input-group input-group-lg">
-                                <input type="search" name="key" class="form-control form-control-lg" placeholder="Kata Kunci" required=>
+                                <input type="search" name="key" class="form-control form-control-lg" placeholder="Kata Kunci" required>
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-lg btn-default">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </form>

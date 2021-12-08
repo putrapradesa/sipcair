@@ -44,6 +44,7 @@ class sp2d extends CI_Controller {
         $category = $data['category'];
         $odp = $data['odp'];
         $key = $data['key'];
+        $tahun = $data['tahun'];
 
         if(($category != "" and $key == "") or ($category == "" and $key != "")) {
             $datajson = array(
@@ -53,7 +54,7 @@ class sp2d extends CI_Controller {
             echo json_encode($datajson);
         }else
         {
-            $result = $this->m_upload->cari($category, $odp, $key);
+            $result = $this->m_upload->cari($category, $odp, $key, $tahun);
 
             $output = '';
             $index=1;
