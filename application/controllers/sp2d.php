@@ -35,7 +35,22 @@ class sp2d extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('main');
+		$currently_selected = date('Y');
+		$earliest_year = 2015;
+		$latest_year = date('Y');
+
+		$year = array();
+
+		foreach ( range( $latest_year, $earliest_year ) as $i ) {
+			
+		    // Prints the option with the next year in range.
+		    array_push($year, $i);
+		}
+
+		$data['year'] = $year;
+
+
+		$this->load->view('main', $data);
 	}
 
 	public function cari()

@@ -118,13 +118,24 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-3">
                                 <div class="form-group">
                                     <label>Pilih Kategori Pencarian</label>
                                     <select class="select2" name="category" id="category" style="width: 100%;" required>
                                     	<option value = ""></option>
                                         <option value = "Penerima">Nama Rekening</option>
                                         <option value = "Keterangan">Uraian</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Tahun</label>
+                                    <select class="select2" name="tahun" id="year" style="width: 100%;" required>
+                                        <option value = ""></option>
+                                         <?php foreach($year as $l) { ?>
+                                            <option value="<?php echo $l; ?>"><?php echo $l; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -138,13 +149,7 @@
                                 </div>
                             </div> -->
                         </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-group">
-                                    <input type="text" name="tahun" class="form-control form-control-lg" placeholder="Tahun" required>
-                                </div>
-                            </div>
-                            <div class="col-8">
+                        <!-- <div class="col-12">
                                 <div class="form-group">
                                     <div class="input-group input-group-lg">
                                         <input type="search" name="key" class="form-control form-control-lg" placeholder="Kata Kunci" required>
@@ -155,9 +160,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- <div class="form-group">
+                        </div> -->
+                        <div class="form-group">
                             <div class="input-group input-group-lg">
                                 <input type="search" name="key" class="form-control form-control-lg" placeholder="Kata Kunci" required>
                                 <div class="input-group-append">
@@ -166,7 +170,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </form>
